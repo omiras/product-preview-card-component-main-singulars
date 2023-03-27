@@ -1,9 +1,14 @@
+:root {
+    --neutral-grey: hsl(228, 12%, 48%);
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .product {
@@ -17,6 +22,17 @@ body {
     border-radius: 16px 16px 0 0;
 }
 
+.product__type {
+    letter-spacing: 5px;
+    color: var(--neutral-grey);
+    text-transform: uppercase;
+}
+
+.product__description {
+    line-height: 1.5rem;
+    color: var(--neutral-grey);
+}
+
 .product__price {
     display: flex;
     align-items: center;
@@ -25,6 +41,13 @@ body {
 
 .actual-price {
     font-size: 2rem;
+    font-family: 'Fraunces';
+    color: hsl(158, 36%, 37%);
+}
+
+.previous-price {
+    color: var(--neutral-grey);
+    text-decoration: line-through;
 }
 
 .product__info {
