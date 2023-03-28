@@ -1,5 +1,6 @@
 :root {
     --neutral-grey: hsl(228, 12%, 48%);
+    --primary-cyan: hsl(158, 36%, 37%);
 }
 
 * {
@@ -9,10 +10,16 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .product {
     width: 370px;
+    background-color: white;
 }
 
 .product__image {
@@ -42,7 +49,7 @@ body {
 .actual-price {
     font-size: 2rem;
     font-family: 'Fraunces';
-    color: hsl(158, 36%, 37%);
+    color: var(--primary-cyan);
 }
 
 .previous-price {
@@ -53,4 +60,49 @@ body {
 .product__info {
     padding: 1rem;
     /* siempre usar rem o píxeles */
+}
+
+.product__button {
+    border: 1px solid var(--primary-cyan);
+    border-radius: 5px;
+    background-color: var(--primary-cyan);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    padding: 0.8rem 0.5rem;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/** Añadir una media query para cuando el viewport es mayor de 400px, entonces tiene que pasar */
+
+/** 1. Hay que aplicar flex al div del product, en dirección row 
+2. Posiblemente tendréis que ajustar otros valores del contenedor
+*/
+
+@media (min-width: 746px) {
+    .product {
+        display: flex;
+        width: 800px;
+        height: 400px;
+        border-radius: 16px;
+
+    }
+
+    .product__image {
+        height: auto;
+        width: 400px;
+        border-radius: 16px 0 0 16px;
+        background-position: center;
+        background-image: url('./images/image-product-desktop.jpg');
+    }
+
+    .product__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+    }
+
+    /** Mejoras: Cómo hacer que los items del contenedor flex tomen la misma medida en función del width del padre **/
+    /** Cómo hacer para no tener que setear el height de la imagen usando propiedades flex*/
 }
