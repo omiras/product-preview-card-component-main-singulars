@@ -83,24 +83,29 @@ body {
     .product {
         display: flex;
         width: 800px;
-        height: 400px;
+        height: 450px;
         border-radius: 16px;
+        gap: 1rem;
 
     }
 
     .product__image {
+        flex: 0 1 400px;
         height: auto;
-        width: 400px;
         border-radius: 16px 0 0 16px;
         background-position: center;
         background-image: url('./images/image-product-desktop.jpg');
     }
 
     .product__info {
+        flex: 0 1 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 400px;
+    }
+
+    .product__button {
+        margin-top: 2rem;
     }
 
     /** Mejoras: Cómo hacer que los items del contenedor flex tomen la misma medida en función del width del padre **/
